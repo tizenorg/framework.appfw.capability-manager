@@ -1,0 +1,12 @@
+# Watch Capability Manager for pkg-config
+
+prefix=/usr
+exec_prefix=${prefix}
+libdir=@LIB_INSTALL_DIR@
+includedir=${prefix}/include
+
+Name: Watch Capability Manager
+Description: Simple string key/val dictionary library
+Version: @VERSION@
+Libs: -L${libdir} -lcapability-manager
+Cflags: -I${includedir}
