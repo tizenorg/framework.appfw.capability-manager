@@ -215,14 +215,6 @@ int capability_manager_get_app_features(app_info_h app_info, bundle** features);
  */
 int capability_manager_is_app_installed(const char* package_name, bool* installed);
 
-/**
- * @brief Disable packages with any required feature
- * @return 0 on success, otherwise a negative error value.
- * @retval #PACKAGE_MANAGER_ERROR_NONE Successful
- * @retval #PACKAGE_MANAGER_ERROR_IO_ERROR IO error
- */
-int capability_manager_disable_packages(void);
-
 #ifdef __cplusplus
 }
 #endif

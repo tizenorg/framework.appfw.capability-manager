@@ -57,9 +57,9 @@ char* capability_manager_xml_util_get_single_item(xmlDocPtr doc, char* tag)
 	xmlXPathObjectPtr result;
 
 	//char xpath[(int)strlen(tag)+3];
-	char xpath[PATH_MAX] = {0,};
-	strcpy(xpath, "//");
-	strncat(xpath, tag, PATH_MAX - 3);
+	char xpath[255] = {0,};
+	strncpy(xpath, "//", sizeof(xpath));
+	strncat(xpath, tag, (sizeof(xpath) - strlen(xpath)));
 
 	result = capability_manager_xml_util_get_nodeset(doc, (xmlChar*) xpath);
 
@@ -77,10 +77,10 @@ int capability_manager_xml_util_get_hash_items(xmlDocPtr doc, char* tag, GHashTa
 	xmlXPathObjectPtr result;
 	xmlNodePtr cur;
 
-	char xpath[PATH_MAX] = {0,};
+	char xpath[255] = {0,};
 	//char xpath[(int)strlen(tag)+3];
-	strcpy(xpath, "//");
-	strncat(xpath, tag, PATH_MAX - 3);
+	strncpy(xpath, "//", sizeof(xpath));
+	strncat(xpath, tag, (sizeof(xpath) - strlen(xpath)));
 
 	result = capability_manager_xml_util_get_nodeset(doc, (xmlChar*) xpath);
 

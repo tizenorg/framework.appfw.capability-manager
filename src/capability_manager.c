@@ -336,14 +336,3 @@ capability_manager_is_app_installed(const char* package_name, bool* installed)
 	return CAPABILITY_MANAGER_ERROR_NONE;
 }
 
-API int
-capability_manager_disable_packages(void)
-{
-	const char* preload_path = "/usr/apps/";
-	const char* download_path = "/opt/usr/apps/";
-
-	_disable_packages_for_required_feature(download_path);
-	_disable_packages_for_required_feature(preload_path);
-
-	return CAPABILITY_MANAGER_ERROR_NONE;
-}

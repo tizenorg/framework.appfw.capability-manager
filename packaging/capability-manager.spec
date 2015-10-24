@@ -3,7 +3,7 @@ Summary:	Watch Capability Manager
 Version:	0.0.7
 Release:	1
 Group:		connectivity
-License:	Apache-2.0
+License:	Apache License, Version 2.0
 Source:		%{name}-%{version}.tar.gz
 
 Requires(post): /sbin/ldconfig
